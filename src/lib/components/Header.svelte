@@ -1,13 +1,10 @@
-<header>
-  <a href="/">Home</a>
-
+<header class="p-4 flex flex-wrap justify-between bg-slate-50 text-xl mb-8">
+  <a href="/" class="font-extrabold">Home</a>
   <nav>
-    <ul>
+    <ul class="list-none flex m-0 gap-5 font-bold">
       <li>
         <a href="/blog">Blog</a>
       </li>
-
-      
       <li>
         <a href="/about">About</a>
       </li>
@@ -17,24 +14,3 @@
     </ul>
   </nav>
 </header>
-
-<style>
-  header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: skyblue;
-    padding: 0.5rem;
-  }
-
-  ul {
-    display: flex;
-    list-style: none;
-    gap: 1rem;
-  }
-
-  a {
-    text-decoration: none;
-    color: #000;
-  }
-</style>

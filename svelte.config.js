@@ -1,4 +1,5 @@
 import adapter from '@sveltejs/adapter-static'
+import { vitePreprocess } from '@sveltejs/kit/vite';
 import sveltePreprocess from 'svelte-preprocess';
 import { mdsvex } from 'mdsvex';
 
@@ -14,6 +15,7 @@ const config = {
 	extensions: ['.svelte', '.md'],
 
 	preprocess: [
+		vitePreprocess(),
 		sveltePreprocess(),
 		mdsvex({
 			extensions: ['.md'],
