@@ -6,7 +6,7 @@
 </script>
 
 <Header />
-<main>
+<main class="min-h-screen flex flex-col">
   <slot />
 </main>
-<Footer />
+<Footer class="mt-auto" />
