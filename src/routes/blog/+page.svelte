@@ -2,7 +2,7 @@
   export let data;
 </script>
 
-<div class="flex justify-center">
+<main class="flex justify-center">
   <section class="max-w-3xl mx-auto">
     <h1 class="text-3xl font-bold">My Blog</h1>
 
@@ -22,4 +22,4 @@
       {/each}
     </ul>
   </section>
-</div>
+</main>
