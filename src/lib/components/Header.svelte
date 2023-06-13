@@ -1,4 +1,16 @@
 <script>
+  import { isLoggedIn } from "../../stores/authStore";
+  import { onMount } from "svelte";
+
+  let loggedIn;
+
+  isLoggedIn.subscribe((value) => {
+    loggedIn = value;
+  });
+
+  onMount(() => {
+    console.log("isLoggedIn", loggedIn);
+  });
 </script>
 
 <header
@@ -17,11 +29,19 @@
         <a href="/contact">Contact</a>
       </li>
       <li>
-        <a href="/login">
-          <button class="pl-2 pr-2 bg-blue-800 rounded text-white"
-            >Log In</button
-          >
-        </a>
+        {#if loggedIn}
+          <a href="/logout">
+            <button class="pl-2 pr-2 bg-blue-800 rounded text-white"
+              >Log Out</button
+            >
+          </a>
+        {:else}
+          <a href="/login">
+            <button class="pl-2 pr-2 bg-blue-800 rounded text-white"
+              >Log In</button
+            >
+          </a>
+        {/if}
       </li>
     </ul>
   </nav>
