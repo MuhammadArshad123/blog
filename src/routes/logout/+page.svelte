@@ -1,6 +1,7 @@
 <script>
   import app from "../../firebase.js";
   import { getAuth } from "firebase/auth";
+  import { goto } from "$app/navigation";
   const auth = getAuth();
   let userEmail = null; // Variable to store the user's email
 
@@ -12,7 +13,7 @@
     auth.signOut().then(
       function () {
         console.log("Sign out successful");
-        location.reload();
+        goto("/");
       },
       function (error) {
         console.log(error);

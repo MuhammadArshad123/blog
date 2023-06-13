@@ -1,6 +1,7 @@
 <script>
   import app from "../../firebase.js";
   import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
+  import { goto } from "$app/navigation";
   const auth = getAuth();
   let errorMessage = "";
   function onSubmit(e) {
@@ -19,6 +20,7 @@
         errorMessage = "";
         const user = userCredential.user;
         e.target.reset();
+        goto("/");
       })
       .catch((error) => {
         if (error.code === "auth/user-not-found") {

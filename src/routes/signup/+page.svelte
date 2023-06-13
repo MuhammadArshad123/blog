@@ -1,6 +1,7 @@
 <script>
   import app from "../../firebase.js";
   import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
+  import { goto } from "$app/navigation";
   const auth = getAuth();
 
   let errorMessage = "";
@@ -44,6 +45,7 @@
         .then((userCredential) => {
           const user = userCredential.user;
           e.target.reset();
+          goto("/");
         })
         .catch((error) => {
           console.log(error.code, error.message);
