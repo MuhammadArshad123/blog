@@ -56,50 +56,39 @@
 
 <main class="flex justify-center">
   <section class="max-w-3xl mx-auto">
-    <div class="flex justify-center">
-      <h1 class="text-3xl font-bold mb-4">Sign Up</h1>
-    </div>
-    <form on:submit={onSubmit} class="">
-      <div class="mb-4">
-        <input
-          type="email"
-          name="email"
-          id="email"
-          class="outline"
-          placeholder="Email"
-          required
-        />
-      </div>
-      <div class="mb-4">
-        <input
-          type="password"
-          name="password"
-          id="password"
-          class="outline"
-          placeholder="Password"
-          minlength="6"
-          required
-        />
-      </div>
-      <div class="mb-4">
-        <input
-          type="password"
-          name="confirmPassword"
-          id="confirmPassword"
-          class="outline"
-          placeholder="Confirm Password"
-          minlength="6"
-          required
-        />
-        {#if errorMessage}
-          <p class="text-red-500">{errorMessage}</p>
-        {/if}
-      </div>
+    <h1 class="text-3xl font-bold mb-4 text-center">Sign Up</h1>
+    <form on:submit={onSubmit} class="flex flex-col items-center">
+      <input
+        type="email"
+        name="email"
+        id="email"
+        class="outline mb-4"
+        placeholder="Email"
+        required
+      />
+      <input
+        type="password"
+        name="password"
+        id="password"
+        class="outline mb-4"
+        placeholder="Password"
+        minlength="6"
+        required
+      />
+      <input
+        type="password"
+        name="confirmPassword"
+        id="confirmPassword"
+        class="outline mb-4"
+        placeholder="Confirm Password"
+        minlength="6"
+        required
+      />
+      {#if errorMessage}
+        <p class="text-red-500 mb-4">{errorMessage}</p>
+      {/if}
       <div class="flex justify-center">
-        <button
-          type="submit"
-          class="bg-blue-800 text-white outline-1 rounded p-3"
-        >
+        <button type="submit" class="bg-blue-800 text-white rounded p-3 w-20">
           Submit
         </button>
       </div>

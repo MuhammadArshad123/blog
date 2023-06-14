@@ -22,9 +22,19 @@
   }
 </script>
 
-{#if userEmail}
-  <p>User email: {userEmail}</p>
-{:else}
-  <p>No user is logged in</p>
-{/if}
-<button on:click={logOut}>Log Out</button>
+<main class="flex justify-center">
+  <section class="max-w-3xl mx-auto">
+    <div class="flex justify-center">
+      <h1 class="text-3xl font-bold">Log Out</h1>
+    </div>
+    {#if userEmail}
+      <p>User email: {userEmail}</p>
+    {:else}
+      <p>No user is logged in</p>
+    {/if}
+    <button
+      class="bg-blue-800 text-white outline-1 rounded p-3"
+      on:click={logOut}>Log Out</button
+    >
+  </section>
+</main>
